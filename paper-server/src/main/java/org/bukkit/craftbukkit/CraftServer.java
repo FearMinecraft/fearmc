@@ -639,20 +639,19 @@ public final class CraftServer implements Server {
             Logger.getLogger(CraftServer.class.getName()).log(Level.SEVERE, ex.getMessage() + " loading " + plugin.getDescription().getFullName() + " (Is it up to date?)", ex);
         }
     }
-
     @Override
     public String getName() {
-        return this.serverName;
+        return "FearMC";
     }
 
     @Override
     public String getVersion() {
-        return this.serverVersion + " (MC: " + this.console.getServerVersion() + ")";
+        return "FearMC - MC: " + this.console.getServerVersion() + " (" + this.serverVersion + ")";
     }
 
     @Override
     public String getBukkitVersion() {
-        return this.bukkitVersion;
+        return this.bukkitVersion.replace("paper", "FearMC");
     }
 
     @Override
@@ -664,7 +663,6 @@ public final class CraftServer implements Server {
     public List<CraftPlayer> getOnlinePlayers() {
         return this.playerView;
     }
-
     @Override
     @Deprecated
     public Player getPlayer(final String name) {
